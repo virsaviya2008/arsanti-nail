@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Маникюр и педикюр в центре Минска — мастер Сание, с 2008 года</title>
+<meta name="description" content="Маникюр, педикюр и депиляция воском в центре Минска, ул. Интернациональная, 5. Рядом метро Площадь Независимости, Октябрьская, Немига. Опыт с 2008 года.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prata&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#2a2522; --text:#5a524d; --muted:#9b918a; --line:#ebe3dc;
+    --bg:#fdfaf7; --soft:#f5eee8; --rose:#e9cfc8; --gold:#b8935a; --gold-d:#9c7a45; --max:1160px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Montserrat,system-ui,sans-serif;color:var(--text);background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased;font-size:15px}
+  img{display:block;width:100%;height:100%;object-fit:cover;background:var(--soft)}
+  a{color:inherit;text-decoration:none}
+  button{font:inherit;cursor:pointer}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+  section{padding:100px 0;scroll-margin-top:72px}
+  .soft{background:var(--soft)}
+  .eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;font-weight:600}
+  h1,h2{font-family:Prata,serif;font-weight:400;color:var(--ink);line-height:1.15}
+  h1{font-size:clamp(38px,4.8vw,62px)}
+  h2{font-size:clamp(30px,3.4vw,44px);margin-bottom:16px}
+  h1 span,h2 span{color:var(--gold)}
+  h3{color:var(--ink);font-weight:600;font-size:16px}
+  .sub{max-width:540px;margin-bottom:48px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 30px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;border:1px solid var(--ink);background:none;color:var(--ink);border-radius:999px;transition:.25s}
+  .btn:hover{background:var(--ink);color:#fff}
+  .btn-gold{background:var(--gold);border-color:var(--gold);color:#fff}
+  .btn-gold:hover{background:var(--gold-d);border-color:var(--gold-d)}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(253,250,247,.92);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .3s}
+  header.scrolled{border-color:var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:24px}
+  .logo b{display:block;font-family:Prata,serif;font-weight:400;font-size:22px;color:var(--ink);line-height:1}
+  .logo small{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+  .menu{display:flex;gap:30px;font-size:14px}
+  .menu a:hover{color:var(--gold)}
+  .nav .btn{padding:11px 22px;font-size:11px}
+  .burger{display:none;background:none;border:0;font-size:24px;color:var(--ink)}
+
+  /* hero */
+  .hero{padding:48px 0 96px}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
+  .hero .lead{font-size:16px;max-width:470px;margin:24px 0 34px}
+  .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+  .metro{display:flex;gap:8px;flex-wrap:wrap;margin-top:40px}
+  .metro span{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-size:13px;color:var(--ink)}
+  .metro span::before{content:"M";display:grid;place-items:center;width:18px;height:18px;border-radius:50%;background:var(--gold);color:#fff;font-size:10px;font-weight:700}
+  .hero-img{position:relative}
+  .hero-img .ph{aspect-ratio:4/5;border-radius:220px 220px 24px 24px;overflow:hidden}
+  .since{position:absolute;left:-30px;top:60px;background:#fff;border-radius:20px;padding:20px 24px;box-shadow:0 24px 50px -24px rgba(42,37,34,.3);text-align:center}
+  .since b{display:block;font-family:Prata,serif;font-size:36px;color:var(--gold);line-height:1;font-weight:400}
+  .since small{font-size:12px}
+
+  /* about */
+  .about{display:grid;grid-template-columns:.9fr 1.1fr;gap:72px;align-items:center}
+  .about-img{aspect-ratio:1;border-radius:24px;overflow:hidden}
+  .timeline{display:grid;gap:18px;margin-top:32px}
+  .tl{display:grid;grid-template-columns:96px 1fr;gap:14px;padding:20px 22px;background:#fff;border:1px solid var(--line);border-radius:18px}
+  .tl b{font-family:Prata,serif;font-size:24px;color:var(--gold);font-weight:400;line-height:1.2}
+  .tl p{font-size:14px}
+
+  /* builder */
+  .builder{display:grid;grid-template-columns:1.35fr .65fr;gap:28px;align-items:start}
+  .steps{background:#fff;border:1px solid var(--line);border-radius:24px;padding:36px}
+  .step{margin-bottom:30px}
+  .step:last-child{margin-bottom:0}
+  .step h4{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:12px}
+  .opts{display:flex;flex-wrap:wrap;gap:8px}
+  .opt{border:1px solid var(--line);background:#fff;border-radius:999px;padding:10px 18px;font-size:14px;color:var(--ink);transition:.2s;display:inline-flex;gap:8px;align-items:center}
+  .opt span{color:var(--muted);font-size:13px}
+  .opt:hover{border-color:var(--gold)}
+  .opt.on{background:var(--ink);border-color:var(--ink);color:#fff}
+  .opt.on span{color:#d4c9c0}
+  .opt:disabled{opacity:.35;cursor:not-allowed}
+  .sum{position:sticky;top:96px;background:var(--ink);color:#d4c9c0;border-radius:24px;padding:36px}
+  .sum .eyebrow{color:var(--gold)}
+  .total{font-family:Prata,serif;font-size:58px;color:#fff;line-height:1;margin:4px 0}
+  .total small{font-size:20px}
+  .sum-list{font-size:14px;margin:18px 0 24px;color:#b3a89f;min-height:40px}
+  .sum .btn{width:100%}
+  .sum-note{font-size:12px;color:#8d837b;margin-top:14px}
+
+  /* prices */
+  .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+  .tabs button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:11px 22px;font-size:14px;color:var(--ink);transition:.2s}
+  .tabs button.on{background:var(--ink);border-color:var(--ink);color:#fff}
+  .pricelist{background:#fff;border:1px solid var(--line);border-radius:24px;padding:8px 36px}
+  .item{display:flex;justify-content:space-between;gap:24px;padding:16px 0;border-bottom:1px solid var(--line);color:var(--ink)}
+  .item:last-child{border-bottom:0}
+  .item b{font-weight:600;white-space:nowrap}
+  .item small{display:block;color:var(--muted);font-size:13px}
+  .notice{background:var(--rose);color:var(--ink);border-radius:14px;padding:14px 18px;font-size:14px;margin:20px 0 4px}
+
+  /* gallery */
+  .gallery{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:230px 230px;gap:12px}
+  .gallery div{overflow:hidden;border-radius:18px}
+  .gallery div:first-child{grid-row:span 2}
+  .gallery img{transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+  .gallery div:hover img{transform:scale(1.05)}
+  .socials{display:flex;gap:10px;margin-top:24px;flex-wrap:wrap}
+  .socials a{border:1px solid var(--line);background:#fff;border-radius:999px;padding:10px 20px;font-size:14px;color:var(--ink);transition:.2s}
+  .socials a:hover{border-color:var(--gold);color:var(--gold)}
+
+  /* find + book */
+  .book{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+  .find{display:grid;gap:14px}
+  .find .row{display:grid;grid-template-columns:28px 1fr;gap:12px;align-items:start}
+  .find .row i{font-style:normal;color:var(--gold);font-size:18px;line-height:1.4}
+  .find b{color:var(--ink);font-weight:600}
+  .map{height:250px;border-radius:20px;overflow:hidden;margin-top:12px;filter:sepia(.25) saturate(.8)}
+  .map iframe{width:100%;height:100%;border:0}
+  .form-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:36px}
+  form{display:grid;gap:12px}
+  form input,form select,form textarea{width:100%;padding:15px 18px;background:var(--bg);border:1px solid var(--line);border-radius:14px;color:var(--ink);font:inherit;font-size:15px;outline:none;transition:border-color .2s;resize:vertical}
+  form input:focus,form select:focus,form textarea:focus{border-color:var(--gold)}
+  .consent{display:flex;gap:10px;align-items:flex-start;font-size:12px;color:var(--muted)}
+  .consent input{width:auto;margin-top:3px;accent-color:var(--gold)}
+  .hp{position:absolute;left:-9999px}
+  .ok{display:none;text-align:center;padding:24px 8px}
+  .ok b{font-family:Prata,serif;font-size:26px;font-weight:400;color:var(--ink);display:block;margin-bottom:8px}
+
+  footer{border-top:1px solid var(--line);color:var(--muted);font-size:13px;padding:28px 0}
+  footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+  .mbar{display:none}
+  .r{opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+  .r.in{opacity:1;transform:none}
+
+  @media (max-width:900px){
+    section{padding:72px 0}
+    .menu{display:none;position:absolute;top:72px;left:0;right:0;background:var(--bg);flex-direction:column;gap:0;border-bottom:1px solid var(--line)}
+    .menu.open{display:flex}
+    .menu a{padding:16px 24px;border-top:1px solid var(--line)}
+    .burger{display:block}
+    .nav .btn{display:none}
+    .hero{padding:24px 0 72px}
+    .hero-grid,.about,.builder,.book{grid-template-columns:1fr;gap:36px}
+    .hero-img{max-width:420px;margin:0 auto;width:100%}
+    .since{left:12px;top:auto;bottom:24px}
+    .sum{position:static}
+    .steps,.form-card{padding:24px}
+    .pricelist{padding:4px 20px}
+    .gallery{grid-template-columns:1fr 1fr;grid-template-rows:200px 200px 200px}
+    .gallery div:first-child{grid-column:span 2;grid-row:auto}
+    .mbar{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;left:12px;right:12px;bottom:12px;z-index:60}
+    .mbar a{padding:14px;border-radius:999px;text-align:center;font-size:14px;font-weight:600;box-shadow:0 12px 30px -10px rgba(0,0,0,.35)}
+    .mbar a:first-child{background:#fff;color:var(--ink);border:1px solid var(--line)}
+    .mbar a:last-child{background:var(--gold);color:#fff}
+    footer{padding-bottom:90px}
+  }
+</style>
+</head>
+<body>
+
+<header id="top">
+  <div class="wrap nav">
+    <a href="#" class="logo"><b>Arsanti Nail</b><small>Мастер Сание · Минск</small></a>
+    <nav class="menu" id="menu">
+      <a href="#about">О мастере</a>
+      <a href="#builder">Стоимость</a>
+      <a href="#prices">Прайс</a>
+      <a href="#works">Работы</a>
+      <a href="#book">Как найти</a>
+    </nav>
+    <a href="#book" class="btn btn-gold">Записаться</a>
+    <button class="burger" id="burger" aria-label="Меню">☰</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="r">
+      <div class="eyebrow">Маникюр · Педикюр · Воск</div>
+      <h1>Ухоженные руки и&nbsp;ножки в&nbsp;<span>самом центре Минска</span></h1>
+      <p class="lead">Аккуратный маникюр и педикюр от мастера с опытом с 2008 года. Внимание к деталям, спокойная атмосфера и удобное расположение — рядом сразу три станции метро.</p>
+      <div class="hero-actions">
+        <a href="#book" class="btn btn-gold">Записаться</a>
+        <a href="#builder" class="btn">Рассчитать стоимость</a>
+      </div>
+      <div class="metro"><span>Площадь Независимости</span><span>Октябрьская</span><span>Немига</span></div>
+    </div>
+    <div class="hero-img r">
+      <div class="ph"><img src="https://images.unsplash.com/photo-1610992015732-2449b76344bc?w=1000&q=80" alt="Нюдовый маникюр"></div>
+      <div class="since"><b>2008</b><small>работаю с&nbsp;года</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="soft" id="about">
+  <div class="wrap about">
+    <div class="about-img r"><img src="https://images.unsplash.com/photo-1632345031435-8727f6897d53?w=900&q=80" alt="Мастер за работой" loading="lazy"></div>
+    <div class="r">
+      <div class="eyebrow">О мастере</div>
+      <h2>Привет, я <span>Сание</span></h2>
+      <p>«Жонглирую ногтевой пылью» уже больше 17 лет. Начинала с педикюра, потом освоила аппаратный маникюр и депиляцию воском. Постоянно учусь новым техникам, чтобы результат держался долго, а процедура была комфортной.</p>
+      <div class="timeline">
+        <div class="tl"><b>2008</b><div><h3>Мастер по педикюру 4-го разряда</h3><p>Первый диплом — квалификационная комиссия, салон красоты «Вергинна».</p></div></div>
+        <div class="tl"><b>2021</b><div><h3>Аппаратный маникюр</h3><p>Курс повышения квалификации, LaNails Studio.</p></div></div>
+        <div class="tl"><b>Сейчас</b><div><h3>Маникюр, педикюр, депиляция воском</h3><p>Собственный кабинет в центре Минска, ул. Интернациональная, 5.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="builder">
+  <div class="wrap">
+    <div class="eyebrow r">Калькулятор визита</div>
+    <h2 class="r">Соберите свой визит — <span>узнайте цену</span></h2>
+    <p class="sub r">Выберите услуги и дополнения, и вы сразу увидите итоговую стоимость. Без переписки и «сколько стоит?».</p>
+    <div class="builder">
+      <div class="steps r" id="steps"></div>
+      <aside class="sum r">
+        <div class="eyebrow">Ваш визит</div>
+        <div class="total"><span id="total">0</span> <small>BYN</small></div>
+        <div class="sum-list" id="sumList">Выберите маникюр или педикюр</div>
+        <a href="#book" class="btn btn-gold" id="sumBook">Записаться на этот визит</a>
+        <p class="sum-note">Цены по актуальному прайсу. Дизайн — от 5 BYN, точную стоимость мастер подтвердит при записи.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="soft" id="prices">
+  <div class="wrap">
+    <div class="eyebrow r">Прайс</div>
+    <h2 class="r">Все цены <span>в одном месте</span></h2>
+    <p class="sub r">Выберите раздел.</p>
+    <div class="tabs r" id="tabs"></div>
+    <div class="r"><div id="notice"></div><div class="pricelist" id="pricelist"></div></div>
+  </div>
+</section>
+
+<section id="works">
+  <div class="wrap">
+    <div class="eyebrow r">Работы</div>
+    <h2 class="r">Аккуратно, <span>как вы любите</span></h2>
+    <div class="gallery r">
+      <div><img src="https://images.unsplash.com/photo-1607779097040-26e80aa78e66?w=1000&q=80" alt="Маникюр" loading="lazy"></div>
+      <div><img src="https://images.unsplash.com/photo-1599206676335-193c82b13c9e?w=600&q=80" alt="Маникюр" loading="lazy"></div>
+      <div><img src="https://images.unsplash.com/photo-1519014816548-bf5fe059798b?w=600&q=80" alt="Дизайн ногтей" loading="lazy"></div>
+      <div><img src="https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?w=600&q=80" alt="Педикюр" loading="lazy"></div>
+      <div><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=600&q=80" alt="Маникюр" loading="lazy"></div>
+    </div>
+    <div class="socials r">
+      <a href="https://www.instagram.com/arsanti_nail/" target="_blank" rel="noopener">Instagram @arsanti_nail</a>
+      <a href="https://www.tiktok.com/@sanie_arsanti" target="_blank" rel="noopener">TikTok @sanie_arsanti</a>
+    </div>
+  </div>
+</section>
+
+<section class="soft" id="book">
+  <div class="wrap book">
+    <div class="r">
+      <div class="eyebrow">Как меня найти</div>
+      <h2>В центре, <span>рядом с метро</span></h2>
+      <div class="find" style="margin-top:28px">
+        <div class="row"><i>⌖</i><div><b>г. Минск, ул. Интернациональная, 5</b><br>кабинет 314</div></div>
+        <div class="row"><i>Ⓜ</i><div>Площадь Независимости · Октябрьская · Немига</div></div>
+        <div class="row"><i>✆</i><div><a href="tel:+375296606527"><b>+375 29 660-65-27</b></a> · <a href="viber://chat?number=%2B375296606527">Viber</a></div></div>
+      </div>
+      <div class="map"><iframe src="https://yandex.ru/map-widget/v1/?text=%D0%9C%D0%B8%D0%BD%D1%81%D0%BA%2C%20%D1%83%D0%BB.%20%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%BD%D0%B0%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F%2C%205&z=16" loading="lazy" title="Карта"></iframe></div>
+    </div>
+    <div class="form-card r">
+      <div class="eyebrow">Онлайн-запись</div>
+      <h2 style="font-size:32px">Записаться</h2>
+      <p style="margin-bottom:22px">Оставьте заявку — я напишу вам в Viber или перезвоню, как только освобожусь от клиента.</p>
+      <form id="form">
+        <input name="name" placeholder="Ваше имя" required>
+        <input name="phone" type="tel" placeholder="+375 (__) ___-__-__" required>
+        <select name="service" id="service">
+          <option>Маникюр</option><option>Педикюр</option><option>Маникюр + педикюр</option><option>Депиляция воском</option><option>Другое</option>
+        </select>
+        <textarea name="comment" id="comment" rows="3" placeholder="Комментарий: услуги, удобные дни и время"></textarea>
+        <input class="hp" name="website" tabindex="-1" autocomplete="off">
+        <label class="consent"><input type="checkbox" required> Я согласен(на) на обработку персональных данных</label>
+        <button class="btn btn-gold" type="submit">Отправить заявку</button>
+      </form>
+      <div class="ok" id="ok"><b>Спасибо, заявка принята!</b>Сание свяжется с вами в ближайшее время. В рабочей версии сайта заявка мгновенно приходит мастеру в Viber или Telegram.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Arsanti Nail · мастер Сание, Минск</span>
+    <span>Демо-концепт сайта</span>
+  </div>
+</footer>
+
+<div class="mbar">
+  <a href="tel:+375296606527">Позвонить</a>
+  <a href="#book">Записаться</a>
+</div>
+
+<script>
+// ---------- Прайс мастера ----------
+const PRICES = {
+  mani: { t:'Маникюр', items:[
+    ['Маникюр без гель-лака',40],['Маникюр с гель-лаком (гелем)',60],['Наращивание (длина 2)',70],['+1 размер длины',5],
+    ['Дизайн любой','от 5'],['Снятие материала',10],['Запечатывание воском',20],['Парафинотерапия',30],
+    ['Массаж кистей','5','в комплексе с маникюром'],['Подстричь ногти',10],['Покрытие без обработки',25,'лак — 10 BYN'],['Коррекция одного ногтя',10] ]},
+  pedi: { t:'Педикюр', items:[
+    ['Педикюр без гель-лака',60],['Педикюр с гель-лаком (гелем)',70],['Дизайн любой','от 5'],['Снятие материала',10],
+    ['Массаж ступней','5','в комплексе с педикюром'],['Подстричь ногти',10],['Покрытие без обработки',25,'лак — 10 BYN'],['Коррекция одного ногтя',10] ]},
+  wax: { t:'Депиляция воском', items:[
+    ['Бикини',55],['Голень',40],['Бедро',45],['Подмышки',30],['Руки до локтя',25],['Руки выше локтя',25],
+    ['Линия трусиков',15],['Ягодицы',25],['Брови',12],['Усики',10],['Подбородок',15],['Баки',15] ]},
+  massage: { t:'Массаж', note:'Массаж временно не проводится — следите за новостями в Instagram.', items:[
+    ['Шейно-воротниковая зона',25,'для мужчин — 30 BYN'],['Массаж лица',30],['Массаж кистей',15],['Массаж ступней',15] ]},
+  extra: { t:'Доп. услуги', items:[
+    ['Коррекция бровей',12],['Окрашивание бровей','по запросу'],['Окрашивание ресниц','по запросу'],['Тейпирование','от 15'] ]},
+};
+
+const tabsEl = document.getElementById('tabs');
+tabsEl.innerHTML = Object.entries(PRICES).map(([k, v]) => `<button data-k="${k}">${v.t}</button>`).join('');
+function showTab(k) {
+  tabsEl.querySelectorAll('button').forEach(b => b.classList.toggle('on', b.dataset.k === k));
+  document.getElementById('notice').innerHTML = PRICES[k].note ? `<div class="notice">${PRICES[k].note}</div>` : '';
+  document.getElementById('pricelist').innerHTML = PRICES[k].items.map(([n, p, h]) =>
+    `<div class="item"><span>${n}${h ? `<small>${h}</small>` : ''}</span><b>${/\d/.test(p) ? p + ' BYN' : p}</b></div>`).join('');
+}
+tabsEl.addEventListener('click', e => { const b = e.target.closest('button'); if (b) showTab(b.dataset.k); });
+showTab('mani');
+
+// ---------- Калькулятор визита ----------
+const STEPS = [
+  { id:'mani', title:'Маникюр', single:true, opts:[['m0','Не нужен',0],['m1','Без гель-лака',40],['m2','С гель-лаком',60],['m3','Наращивание',70]] },
+  { id:'pedi', title:'Педикюр', single:true, opts:[['p0','Не нужен',0],['p1','Без гель-лака',60],['p2','С гель-лаком',70]] },
+  { id:'add', title:'Дополнения', opts:[
+    ['a1','Снятие материала',10,'any'],['a2','Дизайн',5,'any',true],['a3','Парафинотерапия',30,'mani'],
+    ['a4','Запечатывание воском',20,'mani'],['a5','Массаж кистей',5,'mani'],['a6','Массаж ступней',5,'pedi'] ]},
+];
+const state = { mani:'m0', pedi:'p0', add:new Set() };
+const ALL = {}; STEPS.forEach(s => s.opts.forEach(o => ALL[o[0]] = o));
+
+function renderSteps() {
+  const hasM = state.mani !== 'm0', hasP = state.pedi !== 'p0';
+  // дополнения, которые больше не подходят, снимаем
+  state.add.forEach(id => { const need = ALL[id][3]; if ((need === 'mani' && !hasM) || (need === 'pedi' && !hasP) || (need === 'any' && !hasM && !hasP)) state.add.delete(id); });
+  document.getElementById('steps').innerHTML = STEPS.map(s => `
+    <div class="step"><h4>${s.title}</h4><div class="opts">
+      ${s.opts.map(([id, name, price, need, from]) => {
+        const on = s.single ? state[s.id] === id : state.add.has(id);
+        const off = need && ((need === 'mani' && !hasM) || (need === 'pedi' && !hasP) || (need === 'any' && !hasM && !hasP));
+        return `<button class="opt ${on ? 'on' : ''}" data-step="${s.id}" data-id="${id}" ${off ? 'disabled' : ''}>${name}${price ? ` <span>${from ? 'от ' : ''}${price} BYN</span>` : ''}</button>`;
+      }).join('')}
+    </div></div>`).join('');
+  updateSum();
+}
+function chosen() {
+  return [state.mani, state.pedi, ...state.add].filter(id => !['m0','p0'].includes(id)).map(id => ALL[id]);
+}
+function stepTitle(id) { return id[0] === 'm' ? 'Маникюр' : id[0] === 'p' ? 'Педикюр' : ''; }
+function label(o) { const t = stepTitle(o[0]); return t ? `${t} ${o[1].toLowerCase()}` : o[1]; }
+function updateSum() {
+  const list = chosen();
+  const total = list.reduce((s, o) => s + o[2], 0);
+  const from = list.some(o => o[4]);
+  document.getElementById('total').textContent = (from ? 'от ' : '') + total;
+  document.getElementById('sumList').textContent = list.length ? list.map(label).join(' · ') : 'Выберите маникюр или педикюр';
+}
+document.getElementById('steps').addEventListener('click', e => {
+  const b = e.target.closest('.opt'); if (!b || b.disabled) return;
+  const { step, id } = b.dataset;
+  if (step === 'add') state.add.has(id) ? state.add.delete(id) : state.add.add(id);
+  else state[step] = id;
+  renderSteps();
+});
+document.getElementById('sumBook').addEventListener('click', () => {
+  const list = chosen(); if (!list.length) return;
+  const hasM = state.mani !== 'm0', hasP = state.pedi !== 'p0';
+  document.getElementById('service').value = hasM && hasP ? 'Маникюр + педикюр' : hasM ? 'Маникюр' : 'Педикюр';
+  document.getElementById('comment').value = `${list.map(label).join(', ')} — ${document.getElementById('total').textContent} BYN`;
+});
+renderSteps();
+
+// ---------- Форма (демо) ----------
+document.getElementById('form').addEventListener('submit', e => {
+  e.preventDefault();
+  // В рабочей версии: fetch на Cloudflare Worker → сообщение мастеру в Viber/Telegram
+  e.target.style.display = 'none';
+  document.getElementById('ok').style.display = 'block';
+});
+
+// ---------- Интерфейс ----------
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+}), { threshold: .1 });
+document.querySelectorAll('.r').forEach((el, i) => { el.style.transitionDelay = (i % 4) * 70 + 'ms'; io.observe(el); });
+const header = document.getElementById('top');
+addEventListener('scroll', () => header.classList.toggle('scrolled', scrollY > 10));
+const menu = document.getElementById('menu');
+document.getElementById('burger').onclick = () => menu.classList.toggle('open');
+menu.querySelectorAll('a').forEach(a => a.onclick = () => menu.classList.remove('open'));
+</script>
+</body>
+</html>
